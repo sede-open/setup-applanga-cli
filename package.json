@@ -1,0 +1,29 @@
+{
+  "name": "setup-applanga-cli",
+  "version": "1.0.0",
+  "description": "Setup Applanga command line tool",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/applanga/setup-applanga-cli.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "Applanga"
+  ],
+  "homepage": "https://github.com/applanga/setup-applanga-cli#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/tool-cache": "^1.5.5"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/applanga/setup-applanga-cli/issues"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
