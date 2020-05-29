@@ -1,4 +1,4 @@
-## Applanga CLI setup GitHub action
+## [Applanga](https://www.applanga.com/) CLI setup GitHub action
 
 The action enables:
 * pushing sources for translation from your GitHub repository into Applanga project, and 
