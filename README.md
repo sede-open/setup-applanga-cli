@@ -1,8 +1,8 @@
-# [Applanga](https://www.applanga.com/) Applanga Github Workflow Setup Action
+# Applanga Github Workflow Setup Action
 
 This action installs the [Applanga Commandline Interface](https://www.applanga.com/docs/integration-documentation/cli) and enables:
-* pushing sources for translation from your GitHub repository into aApplanga project, and 
-* pulling the translated files from the Applanga portal into your repository.
+* pushing sources for translation from your GitHub repository into a [Applanga](https://www.applanga.com) project, and 
+* pulling the translated files from the [Applanga](https://www.applanga.com) dashboard into your repository.
 
 The benefit of using [Github Workflows](https://help.github.com/en/actions/configuring-and-managing-workflows) for this is that you can automate your localization process without the need to share any repository credentials with your localization provider.
 
