@@ -121,13 +121,13 @@ async function run() {
 		let version = core.getInput('version');
 
 		// Resolve version using wildcard
-        if (version.includes('*')) {
-            version = await getLatestVersion(version);
-            if (!version) {
-                core.setFailed(`No matching version found for: ${core.getInput('version')}`);
-                return;
-            }
-        }
+		if (version.includes('*')) {
+			version = await getLatestVersion(version);
+			if (!version) {
+				core.setFailed(`No matching version found for: ${core.getInput('version')}`);
+				return;
+			}
+		}
 
 		//checking if the file was alredy downloaded
 		//if so, no need to redownload 
