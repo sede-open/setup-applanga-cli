@@ -2,7 +2,37 @@ const core = require('@actions/core');
 const toolCache = require('@actions/tool-cache');
 const process = require('process');
 const childProcess = require('child_process');
-const axios = require('axios');
+const https = require('https');
+
+async function getReleases() {
+  return new Promise((resolve, reject) => {
+    https
+      .get(
+        "https://api.github.com/repos/applanga/applanga-cli/releases",
+        {
+          headers: { "User-Agent": "Node.js" },
+        },
+        (res) => {
+          let data = "";
+
+          res.on("data", (chunk) => {
+            data += chunk;
+          });
+
+          res.on("end", () => {
+            if (res.statusCode === 200) {
+              resolve(JSON.parse(data));
+            } else {
+              reject(new Error(`Failed to get releases: ${res.statusCode}`));
+            }
+          });
+        }
+      )
+      .on("error", (err) => {
+        reject(err);
+      });
+  });
+}
 
 function compareVersions(v1, v2) {
   const v1Parts = v1.split(".").map(Number);
@@ -17,10 +47,7 @@ function compareVersions(v1, v2) {
 }
 
 async function getLatestVersion(version) {
-  const response = await axios.get(
-    "https://api.github.com/repos/applanga/applanga-cli/releases"
-  );
-  const releases = response.data;
+  const releases = await getReleases();
 
   // Regex patterns for the expected wildcard formats
   const majorMinorPattern = /^(\d+)\.(\d+)\.\*$/; // match x.y.*
