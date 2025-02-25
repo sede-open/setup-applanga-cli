@@ -4,6 +4,9 @@ const process = require('process');
 const childProcess = require('child_process');
 const https = require('https');
 //testing glpoc
+//testing glpoc
+//testing glpoc - sonar should report these comments as warnings
+
 
 async function getReleases() {
   return new Promise((resolve, reject) => {
