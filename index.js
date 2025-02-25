@@ -3,6 +3,7 @@ const toolCache = require('@actions/tool-cache');
 const process = require('process');
 const childProcess = require('child_process');
 const https = require('https');
+//test
 
 async function getReleases() {
   return new Promise((resolve, reject) => {
