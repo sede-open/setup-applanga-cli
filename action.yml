@@ -2,8 +2,12 @@ name: 'Setup Applanga CLI action'
 description: 'Setup Applanga command line tool'
 inputs:
   version:
-    description: 'Applanga cli version'
-    required: true
+      description: 'Applanga cli version'
+      required: true
+  github_token:
+    description: "Token for GitHub API calls (defaults to run token)"
+    default: ${{ github.token }}
+    required: false
 branding:
   icon: 'map-pin'  
   color: 'blue'
